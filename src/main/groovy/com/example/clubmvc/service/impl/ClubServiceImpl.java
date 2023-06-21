@@ -6,6 +6,9 @@ import com.example.clubmvc.repository.ClubRepository;
 import com.example.clubmvc.service.ClubService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -54,6 +57,12 @@ public class ClubServiceImpl implements ClubService {
     @Override
     public void deleteClub(long clubId) {
         clubRepository.deleteById(clubId);
+    }
+
+    @Override
+    public List<ClubDto> searchClubs(String query) {
+        List<Club> clubs = clubRepository.searchClubs(query);
+        return clubs.stream().map((club) -> mapToClubDto(club)).collect(Collectors.toList());
     }
 
     private Club mapToClub(ClubDto club) {
