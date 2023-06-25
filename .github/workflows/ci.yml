@@ -28,8 +28,20 @@ jobs:
       with:
         java-version: '17'
         distribution: 'temurin'
+        
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
+      
     - name: Build with Gradle
       uses: gradle/gradle-build-action@0d13054264b0bb894ded474f08ebb30921341cee
+      
+    - name: Build & push Docker image
+      uses: mr-smithers-excellent/docker-build-push@v6
+      with:
+            image: dare889/demo-app
+            tags: v1, latest
+            registry: registry-url.io
+            dockerfile: Dockerfile.ci
+            username: ${{ secrets.DOCKER_USERNAME }}
+            password: ${{ secrets.DOCKER_PASSWORD }}
 
