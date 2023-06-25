@@ -40,6 +40,6 @@ jobs:
       with:
             image: dare889/demo-app
             registry: docker.io
-            username: ${{ secrets.DOCKER_USERNAME }}
-            password: ${{ secrets.DOCKER_PASSWORD }}
+            username: dare889
+            password: ?BN+m=ywTm_r7Au
 
