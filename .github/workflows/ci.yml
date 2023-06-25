@@ -36,7 +36,7 @@ jobs:
       uses: gradle/gradle-build-action@0d13054264b0bb894ded474f08ebb30921341cee
       
     - name: Build & push Docker image
-      uses: mr-smithers-excellent/docker-build-push@v1
+      uses: mr-smithers-excellent/docker-build-push@v5
       with:
             image: dare889/demo-app
             registry: docker.io
