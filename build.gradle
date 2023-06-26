@@ -13,6 +13,7 @@ java {
 
 repositories {
 	mavenCentral()
+	gradlePluginPortal()
 }
 
 dependencies {
@@ -21,7 +22,13 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect:3.2.1'
 	implementation 'org.springframework.boot:spring-boot-starter-validation:3.1.0'
+	implementation 'org.apache.tomcat.embed:tomcat-embed-jasper:11.0.0-M7'
+	implementation "org.apache.tomcat.embed:tomcat-embed-core:8.5.90"
+	implementation	"org.apache.tomcat.embed:tomcat-embed-logging-juli:8.5.2"
+	implementation	"org.apache.tomcat.embed:tomcat-embed-jasper:8.5.90"
+	implementation 'javax.servlet:jstl:1.2'
 	compileOnly 'org.projectlombok:lombok'
+	compileOnly 'javax.servlet:javax.servlet-api:4.0.1'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	runtimeOnly 'org.postgresql:postgresql'
 	annotationProcessor 'org.projectlombok:lombok'
