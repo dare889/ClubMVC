@@ -1,6 +1,6 @@
 FROM tomcat:latest
 
-EXPOSE 8093
+EXPOSE 8080
 
 
 COPY ./build/libs/clubmvc-0.0.1-SNAPSHOT.jar /usr/app/
