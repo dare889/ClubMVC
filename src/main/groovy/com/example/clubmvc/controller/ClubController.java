@@ -35,6 +35,19 @@ public class ClubController {
      * @param model the model
      * @return the string
      */
+    @GetMapping("/")
+    public String index(Model model){
+        List<ClubDto> clubs = clubService.findAllClubs();
+        model.addAttribute("clubs",clubs);
+        return "clubs-list";
+    }
+
+    /**
+     * List clubs string.
+     *
+     * @param model the model
+     * @return the string
+     */
     @GetMapping("/clubs")
     public String listClubs(Model model){
         List<ClubDto> clubs = clubService.findAllClubs();
