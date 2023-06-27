@@ -34,12 +34,4 @@ jobs:
       
     - name: Build with Gradle
       run: ./gradlew build
-        
-    - name: Build & push Docker image
-      uses: mr-smithers-excellent/docker-build-push@v4
-      with:
-            image: dare889/demo-app
-            registry: docker.io
-            username: dare889
-            password: ?BN+m=ywTm_r7Au
 
