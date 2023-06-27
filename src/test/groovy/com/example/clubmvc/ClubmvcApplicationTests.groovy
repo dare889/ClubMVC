@@ -8,6 +8,7 @@ class ClubmvcApplicationTests {
 
 	@Test
 	void contextLoads() {
+		System.out.println("This is the testcase in this class");
 	}
 
 }
