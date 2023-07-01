@@ -33,7 +33,7 @@ jobs:
       run: chmod +x gradlew
       
     - name: Build with Gradle
-      run: ./gradlew build
+      run: ./gradlew build -e DB_HOST=postgres -e DB_PORT=5432 -e DB_NAME=postgres -e DB_NAME=postgres -e DB_PASSWORD=password
       
     - name: Build & push Docker image
       uses: mr-smithers-excellent/docker-build-push@v6
